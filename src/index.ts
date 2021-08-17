@@ -1,4 +1,6 @@
 export type FetchState<R, E> = {
+  state: 'default';
+} | {
   state: 'loading';
 } | {
   state: 'success';
