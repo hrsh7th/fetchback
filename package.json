@@ -1,0 +1,60 @@
+{
+  "name": "fetchback",
+  "version": "0.0.1",
+  "description": "fetch state tracker.",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "sideEffect": false,
+  "scripts": {
+    "test": "jest",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc --project ./tsconfig.json",
+    "build:esm": "tsc --project ./tsconfig.esm.json",
+    "release": "np"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "author": "hrsh7th",
+  "keywords": [
+    "React",
+    "state",
+    "fetch",
+    "async"
+  ],
+  "repository": {
+    "url": "https://github.com/hrsh7th/fetchback",
+    "type": "github"
+  },
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json",
+        "diagnostics": true
+      }
+    },
+    "testMatch": [
+      "<rootDir>/src/**/*.test.+(ts|tsx|js)"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.6.1",
+    "fetch-mock": "^9.11.0",
+    "jest": "^27.0.6",
+    "node-fetch": "^2.6.1",
+    "np": "^7.5.0",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  }
+}
